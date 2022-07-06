@@ -4,7 +4,7 @@
 
 1. [Comments](#comments)
 2. [Variables](#variables)
-3. [Number](#number)
+3. [Numbers](#number)
 4. [Strings](#strings)
 
 ## Comments
@@ -117,3 +117,21 @@ myVar += 5; // 6
 
 ## Strings
 
+To escape a quote from considering it as an end of string quote by placing a backslash `\` in front of the quote.
+
+```javascript
+const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+```
+
+Escape sequences 
+
+| Code | Output |
+| ---- | ------ |
+| `\'` | single quote |
+| `\"` | double quote |
+| `\\` | backslash |
+| `\n` | newline |
+| `\r` | carriage return |
+| `\t` | tab |
+| `\b` | word boundary |
+| `\f` | form feed |
