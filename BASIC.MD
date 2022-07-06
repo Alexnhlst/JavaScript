@@ -6,6 +6,7 @@
 2. [Variables](#variables)
 3. [Numbers](#number)
 4. [Strings](#strings)
+5. [Arrays](#arrays)
 
 ## Comments
 
@@ -148,3 +149,35 @@ myStr[0] = "J";
 ```shell
 TypeError: Cannot assign to read only property '0' of string 'Bob'
 ```
+
+## Arrays
+
+With JavaScript `array` variables, we can store several pieces of data in one place.
+
+```javascript
+const sandwich = ["peanut butter", "jelly", "bread"];
+```
+
+Arrays can be nested inside other arrays.
+
+```javascript
+const teams = [["Bulls", 23], ["White Sox", 45]];
+```
+
+Arrays use zero-base indexing, meaning that the first element in the array has an index of 0. To access an element inside an array, square bracket notation `[]` is used, with the use of a specific index. To access elements inside of multi-dimentsional arrays, the first set of brackets refers to the entries in the outer-most array, and each additional pair of brackets refers to the next level of entries inside.
+
+```javascript
+const arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14]
+];
+
+arr[3]; // [[10, 11, 12], 13, 14]
+arr[3][0]; // [10, 11, 12]
+arr[3][0][1]; // 11
+```
+
+The `.push()` method takes one or more parameters and "pushes" them onto the end of the array. The `.unshift()` mehtod "pushes" the element at the beginning of the array.
+The `.pop()` method is used to pop a value off of the end of an array. This popped off value can be stored by assigning it to a variable. To remove the first value, the `.shift()` is used instead.
