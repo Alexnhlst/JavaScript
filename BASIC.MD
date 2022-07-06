@@ -10,6 +10,7 @@
 6. [Functions](#functions)
 7. [Conditionals and comparison](#conditionals-and-comparison)
 8. [Objects](#objects)
+9. [Loops](#loops)
 
 ## Comments
 
@@ -273,3 +274,87 @@ function sequentialSizes(val) {
 
 ---
 
+## Objects
+
+Objects are similar to `arrays`, except that instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`. Objects are useful for storing data in a structured way, and can represent real world objects. If your object has any non-string properties, JavaScript will automatically typecast them as strings. To access properties of an object we can use the dot notation `.` or the bracket notation `[]`. The bracket notation is used to access property with a space in its name.
+To delete properties from an object we can use the `delete` keyword.
+
+```javascript
+const cat = {
+    "name": "Whiskers",
+    "legs": 4,
+    "tails": 1,
+    "enemies": ["Water", "Dogs"],
+    "collar": true,
+}
+
+const catTail = cat.tails;
+const catName = cat["name"];
+delete cat.collar;
+```
+
+Objects can be thought of as key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
+
+```javascript
+function phoneticLookup(val) {
+  let result = "";
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+  return result;
+}
+
+// The switch statement can be refactored as an object
+function phoneticLookup(val) {
+  let result = "";
+  const lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank",
+  }
+  result = lookup[val];
+  return result;
+}
+```
+
+The `.hasOwnProperty(propname)` method of objects determines if that object has the given property name.
+A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of `strings`, `booleans`, `arrays`, `functions`, and `objects`. To access sub-properties of objects, it is possible to chain together the dot or bracket notation.
+
+```javascript
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+```
+
+---
+
+## Loops
