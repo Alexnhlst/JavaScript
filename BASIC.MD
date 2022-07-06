@@ -273,6 +273,14 @@ function sequentialSizes(val) {
 }
 ```
 
+The conditional operator, also called the ternary operator, can be used as a one line `if-else` expression. The syntax i `a ? b : c`. where `a` is the condition, `b` is the code to run when the condition returns `true`, and `c` is the code to run when the condition returns `false`. Multiple ternary operators can be used.
+
+```javascript
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+```
+
 ---
 
 ## Objects
@@ -412,3 +420,22 @@ The recursive version of `multiply` breaks down like this. In the bad case, wher
 
 ## Some built-in methods
 
+Random numbers are useful for creating random behavior. `Math.random()` function generates a random decimal between 0 (inclusive) and 1 (exclusive).
+`Math.random()` is usually used with `Math.floor()` to generate whole numbers. `Math.floor()` rounds the number down to its nearest whole number. 
+
+```javascript
+Math.floor(Math.random() * 20);
+
+/* Generating a random whole number within a range
+The formula used is:
+Math.floor(Math.random() * (max - min + 1)) + min*/
+
+Math.floor(Math.random() * (20 - 15 + 1)) + 15
+```
+
+`parseInt()` parses a string and returns an integer. It can take a second argument for the radix, which specifies the base of the number in the string. It can be an integer between 2 and 36.
+
+```javascript
+// the radix says that 11 is in the binary system, which corresponds to the integer 3
+const a = parseInt("11", 2); 
+```
