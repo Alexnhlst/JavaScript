@@ -4,6 +4,8 @@
 
 1. [Comments](#comments)
 2. [Variables](#variables)
+3. [Number](#number)
+4. [Strings](#strings)
 
 ## Comments
 
@@ -31,7 +33,7 @@ Variable names can be made up of numbers, letters nad `$` or `_`, but may not co
 var name;
 ```
 
-To store a value in a variable, the assigment operator `=` is used.
+To store a value in a variable, the assignment operator `=` is used.
 
 ```javascript
 var myVar;
@@ -79,3 +81,39 @@ TypeError: "FAV_PET" is read-only
 > Common practice
 >
 > It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values
+
+---
+
+## Number
+
+`Number` is a data type which represents numeric data.
+The operators `+`, `-`, `*` , and `/` are used to perform basic math operations.
+To increment/decrement a variable, the `++`/`--` operator is used.
+
+```javascript
+i++;
+// is the equivalent of
+i = i + 1;
+```
+
+A decimal number is sometimes referred to as floating point or floats.
+The `%` operator gives the remainder of the division of two numbers.
+
+```javascript
+5 % 2 = 1;
+Math.floor(5 / 2) = 2 // Quotient
+2 * 2 = 4;
+5 - 4 = 1; // Remainder
+```
+
+In programming, it is common to use assignments to modify the contents of a variable. Compound operators allow to do mathematical operations and assignments in one step.
+
+```javascript
+let myVar = 1;
+myVar += 5; // 6
+```
+
+---
+
+## Strings
+
