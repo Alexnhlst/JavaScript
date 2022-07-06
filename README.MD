@@ -3,6 +3,7 @@
 ## Table of contents
 
 1. [Basic JavaScript](/../../tree/basic-js/BASIC.MD)
+1. [ES6](/../../tree/es6/ES6.MD)
 
 
 [^1]: [Course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
