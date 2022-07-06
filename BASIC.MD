@@ -8,6 +8,7 @@
 4. [Strings](#strings)
 5. [Arrays](#arrays)
 6. [Functions](#functions)
+7. [Conditionals and comparison](#conditionals-and-comparison)
 
 ## Comments
 
@@ -190,10 +191,35 @@ The `.pop()` method is used to pop a value off of the end of an array. This popp
 ## Functions
 
 In JavaScript, we can divide up our code into reusable parts called functions. They can be invoked by using their name followed by parentheses.
+To ensure reusability, functions accept parameters. They act as placeholders for the values that are to be input to a function when it is called. The actual values that are input (or "passed") into a function when it is called are known as arguments. The `return` statement is used to send a value back out of a function.
+
 
 ```javascript
-function functionName() {
-    console.log("Hello World");
+function functionWithArgs(num1, num2) {
+  return num1 + num2;
 }
-functionName();
+
+const result = functionWithArgs(1, 2); // 3
 ```
+
+Scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code. Variables which are declared without the `let` or `const` keywords are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. Variables which are declared within a function, as well as the function parameters, have local scope. That means they are only visible within that function. It is possible to have both local and global variables with the same name. In this case, the local variable takes precedence over the global one.
+A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`.
+In computer science a queue is an abstract data structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the from the fron off the queue.
+
+```javascript
+function nextInLine(arr, item) {
+    arr.push(item);
+    item = arr.shift();
+    return item;
+}
+
+const testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+```
+
+---
+
+## Conditionals and comparison
