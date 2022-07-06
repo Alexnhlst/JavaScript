@@ -9,6 +9,7 @@
 5. [Arrays](#arrays)
 6. [Functions](#functions)
 7. [Conditionals and comparison](#conditionals-and-comparison)
+8. [Objects](#objects)
 
 ## Comments
 
@@ -203,7 +204,7 @@ const result = functionWithArgs(1, 2); // 3
 ```
 
 Scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code. Variables which are declared without the `let` or `const` keywords are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. Variables which are declared within a function, as well as the function parameters, have local scope. That means they are only visible within that function. It is possible to have both local and global variables with the same name. In this case, the local variable takes precedence over the global one.
-A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`.
+A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`. When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
 In computer science a queue is an abstract data structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the from the fron off the queue.
 
 ```javascript
@@ -223,3 +224,52 @@ console.log("After: " + JSON.stringify(testArr));
 ---
 
 ## Conditionals and comparison
+
+Booleans may only be one of two values: `true` or `false`.
+The are many comparison operators in JavaScript, all of these return a `boolean` value. The most basic operator is the equality operator `==`, which compares two values and returns true if they're equivalent.
+The stric equality operator `===`, unlike the equality operator, which attempts to convert both values being compared to a common type, does not perform a type conversion. If the values being compared have different types, they are considered unequal, and the strict operator will return false.
+The `typeof` operator can determine the type of a variable or a value.
+The inequality operator `!=` is the opposite of the equality operator. There is also the strict inequality operator `!==`, which is the opposite of the strict equality.
+The greater than operator `>`, grater than or equal to `>=`, less than `<`, and less than or equal to `<=` compares the values of two numbers.
+To test more conditions at the same time, the logical and operator `&&` returns `true` if and ondly if the operands to the left and right of it are true.
+The logical or operator `||` returns `true` if either of the operands is true.
+`if` statements are used to make decisions in code. The keyword `if` tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as `boolean` conditions. When the condition evaluates to `true`, the program executes the statement inside the curly braces. A `else` statement is an alternate block of code executed when the condition checked in the `if` block is `false`.
+To check multiple conditions we can use the `else if` statement.
+
+```javascript
+if (num > 15) {
+      return "Bigger than 15";
+} else if (num < 5) {
+  return "Smaller than 5";
+} else {
+  return "Between 5 and 15";
+}
+```
+
+To check many options, you can use a switch statement. A `switch` statement tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered. `case` values are tested with strict equality. A `default` statement can be added to the `switch` statement, it acts like a final `else` in a `if/else` chain. If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered.
+
+```javascript
+function sequentialSizes(val) {
+  let answer = "";
+  switch(val) {
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break;
+  }
+}
+```
+
+---
+
