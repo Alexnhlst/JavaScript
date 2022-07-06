@@ -1,4 +1,4 @@
-# Basic JavaScript
+# Basic JavaScript :wave: :earth_africa:
 
 ## Table of contents
 
@@ -7,6 +7,7 @@
 3. [Numbers](#number)
 4. [Strings](#strings)
 5. [Arrays](#arrays)
+6. [Functions](#functions)
 
 ## Comments
 
@@ -150,6 +151,8 @@ myStr[0] = "J";
 TypeError: Cannot assign to read only property '0' of string 'Bob'
 ```
 
+---
+
 ## Arrays
 
 With JavaScript `array` variables, we can store several pieces of data in one place.
@@ -181,3 +184,16 @@ arr[3][0][1]; // 11
 
 The `.push()` method takes one or more parameters and "pushes" them onto the end of the array. The `.unshift()` mehtod "pushes" the element at the beginning of the array.
 The `.pop()` method is used to pop a value off of the end of an array. This popped off value can be stored by assigning it to a variable. To remove the first value, the `.shift()` is used instead.
+
+---
+
+## Functions
+
+In JavaScript, we can divide up our code into reusable parts called functions. They can be invoked by using their name followed by parentheses.
+
+```javascript
+function functionName() {
+    console.log("Hello World");
+}
+functionName();
+```
