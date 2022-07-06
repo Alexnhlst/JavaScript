@@ -135,3 +135,16 @@ Escape sequences
 | `\t` | tab |
 | `\b` | word boundary |
 | `\f` | form feed |
+
+The `+` operator is also used with `String` values concatenating them. In this case, `+` is called the concatenation operator.
+To find the lenght of a `String` value we can add `.length` after the string variable or string literal
+`String` values are immutable, which means that they cannot be altered once created;
+
+```javascript
+let myStr = "Bob";
+myStr[0] = "J";
+```
+
+```shell
+TypeError: Cannot assign to read only property '0' of string 'Bob'
+```
