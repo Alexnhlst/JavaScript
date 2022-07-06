@@ -11,6 +11,7 @@
 7. [Conditionals and comparison](#conditionals-and-comparison)
 8. [Objects](#objects)
 9. [Loops](#loops)
+10. [Some built-in methods](#some-built-in-methods)
 
 ## Comments
 
@@ -358,3 +359,56 @@ const gloveBoxContents = myStorage.car.inside["glove box"];
 ---
 
 ## Loops
+
+Loops are used to run the same code multiple times. A `while` loop runs while a specified condition is true and stops once that condition is no longer true.
+
+```javascript
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
+  ourArray.push(i);
+  i++
+}
+```
+
+A `for` loop runs a specific number of times. They are declared with three optional expressions separated by semicolons:
+`for (a; b; c)`, where `a` is the initialization statement, `b` is the condition statement, and `c` is the final expression.
+The initialization statement is executed one time only before the loop starts. The condition statement is evaluated at the beginning of every loop iteration and will continue as lons as it evaluates to `true`. When the condition is `false` at the start of the iteration, the loop will stop executing. The final expression is executed at the end of each loop iteration, prior to the next condition check.
+
+```javascript
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+```
+
+A `do...while` loop will first `do` one pass of the code inside the loop no matter what, and then continue to run the loop `while` the specified condition evaluates to `true`.
+Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first `n` elements of an array to create the product of those elements.
+
+```js
+// using a for loop
+function multiply(arr, n) {
+  let product = 1;
+  for (let i = 0; i < n; i++) {
+    product *= arr[i]
+  }
+}
+
+// multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]; multiply can be rewritten in terms of itself
+function multiply(arr, n) {
+  if (n <= 0) {
+    return 1;
+  } else {
+    return multiply(arr, n - 1) * arr[n - 1];
+  }
+}
+```
+
+The recursive version of `multiply` breaks down like this. In the bad case, where `n <= 0`, it returns 1. For larger values of `n`, it calls itself, but with `n - 1`. 
+
+---
+
+## Some built-in methods
+
