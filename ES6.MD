@@ -5,6 +5,7 @@
 2. [Arrow functions](#arrow-functions)
 3. [Destructuring](#destructuring)
 4. [Template literals](#template-literals)
+5. [Class](#class)
 
 ---
 
@@ -130,3 +131,46 @@ const getMousePosition = (x, y) => ({
 // The object can be refactored as
 const getMousePosition = (x, y) => ({x, y});
 ```
+
+---
+
+## Class
+
+ES6 provides a new syntax to create objects, using the class keyword. The `class` syntax is just syntax, and not a full-fledged class-base implementation of an object-oriented paradigm. Class names in ES6 follow the UpperCamelCase syntax.
+
+```javascript
+class SpaceShuttle {
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+
+const zeus = new SpaceShuttle("Jupiter")
+```
+
+Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. 
+
+```javascript
+class Book {
+    #author;
+    constructor(author) {
+        this.#author = author;
+    }
+
+    get writer() {
+        return this.#author;
+    }
+
+    set writer(updatedAuthor) {
+        this.#author = updatedAuthor;
+    }
+}
+
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+```
+
+> ES13, released on June 2022, introduced private properties in class syntax, along with static properties and private methods. Before this introduction, the convention was to precede the name of a private variable with an underscore `_`
