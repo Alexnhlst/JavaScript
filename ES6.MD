@@ -3,6 +3,8 @@
 
 1. [let and const](#let-and-const)
 2. [Arrow functions](#arrow-functions)
+3. [Destructuring](#destructuring)
+
 
 ---
 
@@ -65,4 +67,39 @@ var maxiumus = Math.max.apply(null, arr);
 
 // The spread operator makes this syntax much better
 const maximus = Math.max(...arr);
+```
+
+---
+
+## Destructuring
+
+Destructuring assignment is special syntax introduced in ES6, for neatly assigning values taken directly from an object. It allows to assign a new variable name when extracting values.
+
+```javascript
+const user = { name: "John Doe", age: 34 };
+
+const { name: userName, age } = user;
+
+// Destructuring values from nested objects
+const user2 = {
+    johnDoe: {
+        age: 34,
+        email: "johnDoe@freeCodeCamp.com"
+    }
+}
+
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+
+One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables. In this example `a` is `1`, `b` is `2`, and `c` is `5`. The commas are used to reach the desired index
+
+```javascript
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+```
+
+In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array. The result is similar to `Array.prototype.slice()`. `a` and `b` would equal to `1` and `2`, `arr` would equal to `[3, 4, 5, 7]`.
+
+```javascript
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
 ```
