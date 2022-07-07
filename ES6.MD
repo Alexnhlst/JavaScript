@@ -6,6 +6,7 @@
 3. [Destructuring](#destructuring)
 4. [Template literals](#template-literals)
 5. [Class](#class)
+6. [Modules](#modules)
 
 ---
 
@@ -174,3 +175,34 @@ console.log(novel.writer);
 ```
 
 > ES13, released on June 2022, introduced private properties in class syntax, along with static properties and private methods. Before this introduction, the convention was to precede the name of a private variable with an underscore `_`
+
+---
+
+## Modules
+
+ES6 introduced a way to easily share code among JavaScript files. This involves exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them. In order to take advantage of this functionality, you need to create a script in your HTML document with a `type` of `module`.
+A script that uses this `module` type can now use the `import` and `export` features.
+
+```HTML
+<script type="module" src="filename.js"></script>
+```
+
+To share a variable or a funcion, the `export` keyword is used.
+Once exported, they can be imported using the `import` keyword.
+
+```javascript
+export const add = (x, y) => {
+    return x + y;
+}
+
+// This syntax is also valid
+export { add };
+
+// importing
+import { add, subtract } from './math_function.js';
+```
+
+The wildcard `*` is used to import all the content of a file. The `import * as` allows to alias an import with a chosen name.
+The `export default` syntax is used to export only a value from a file. It is also used to create a fallback value for a file or module. You can only have one value to be a default export in each module or file, and you cannot use export defaul with `var`, `let` or `const`. To import a default export, the curly braces `{}` are omitted in the import statement.
+
+---
