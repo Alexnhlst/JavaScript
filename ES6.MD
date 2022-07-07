@@ -7,6 +7,7 @@
 4. [Template literals](#template-literals)
 5. [Class](#class)
 6. [Modules](#modules)
+7. [Promise](#promise)
 
 ---
 
@@ -206,3 +207,24 @@ The wildcard `*` is used to import all the content of a file. The `import * as` 
 The `export default` syntax is used to export only a value from a file. It is also used to create a fallback value for a file or module. You can only have one value to be a default export in each module or file, and you cannot use export defaul with `var`, `let` or `const`. To import a default export, the curly braces `{}` are omitted in the import statement.
 
 ---
+
+## Promise
+
+A promise is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. `Promise` is a constructor function, so you need to use the `new` keyword to create one. It takes a funcion, as its argument, with two parameters - `resolve` and `reject`
+A promise has three states: `pending`, `fulfilled`, and `rejected`. `resolve` is used when you want your promise to succeed, and `reject` is used when you want it to fails.
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+```
+
+After a promise is fulfilled with `resolve`, a `then` method can be chained to specify what to do after the success of the promise. a `catch` method can be chained to handle the `reject` method.
+
+```javascript
+myPromise.then(result => {}).catch(error => {})
+```
