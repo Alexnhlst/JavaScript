@@ -4,7 +4,7 @@
 1. [let and const](#let-and-const)
 2. [Arrow functions](#arrow-functions)
 3. [Destructuring](#destructuring)
-
+4. [Template literals](#template-literals)
 
 ---
 
@@ -102,4 +102,31 @@ In some situations involving array destructuring, we might want to collect the r
 
 ```javascript
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+```
+
+---
+
+## Template literals
+
+A template literal is a special type of string that makes creating complex strings easier. Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+
+```javascript
+const person = {
+    name: "Zodiac Hasbro",
+    age: 56
+}
+
+const greeting = `Hello, my name is ${person.name}! I am ${person.age} years old.`;
+```
+
+ES6 adds some nice support for easily defining object literals.
+
+```javascript
+const getMousePosition = (x, y) => ({
+    x: x,
+    y: y
+});
+
+// The object can be refactored as
+const getMousePosition = (x, y) => ({x, y});
 ```
