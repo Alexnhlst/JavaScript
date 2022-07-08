@@ -5,6 +5,6 @@
 1. [Basic JavaScript](/../../tree/basic-js/BASIC.MD)
 2. [ES6](/../../tree/es6/ES6.MD)
 3. [Regular Expressions](/../../tree/regex/REGEX.MD)
-
+4. [Debugging](/../../tree/debugging/DEBUGGING.MD)
 
 [^1]: [Course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
