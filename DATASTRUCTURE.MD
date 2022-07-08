@@ -3,7 +3,7 @@
 ## Table of contents
 
 1. [Arrays](#arrays)
-
+2. [Objects](#objects)
 
 ---
 
@@ -93,3 +93,35 @@ let nestedArray = [
 
 console.log(nestedArray[2][1][0][0][0]) // 'deepest-est?'
 ```
+
+---
+
+## Objects
+
+At their most basic, objects are just collections of key-value pairs. They are pieces of data (values) mapped to unique identifiers called properties (keys). Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript.
+
+```javascript
+let nestedObject = {
+  id: 28802695164,
+  date: 'December 31, 2016',
+  data: {
+    totalUsers: 99,
+    online: 80,
+    onlineStatus: {
+      active: 67,
+      away: 13,
+      busy: 8
+    }
+  }
+};
+```
+
+To iterate through all the keys within an object, the `for...in` statement is used. Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+
+```javascript
+for (let user in users) {
+    console.log(user)
+}
+```
+
+To generate an array which contains all the keys stored in an object, the `Object.keys()` method can be used. This method takes an object as the argument and returns an array of strings representing each property in the object
