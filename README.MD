@@ -7,5 +7,6 @@
 3. [Regular Expressions](/../../tree/regex/REGEX.MD)
 4. [Debugging](/../../tree/debugging/DEBUGGING.MD)
 5. [Basic Data Structure](/../../tree/basic-data-structure/DATASTRUCTURE.MD)
+6. [Basic Algorithm Scripting](/../../tree/algorithms/ALGORITHMS.MD)
 
 [^1]: [Course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
