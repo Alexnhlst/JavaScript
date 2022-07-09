@@ -7,6 +7,11 @@
 3. [Regular Expressions](/../../tree/regex/REGEX.MD)
 4. [Debugging](/../../tree/debugging/DEBUGGING.MD)
 5. [Basic Data Structure](/../../tree/basic-data-structure/DATASTRUCTURE.MD)
-6. [Basic Algorithm Scripting](/../../tree/algorithms/ALGORITHMS.MD)
+6. [Object Oriented Programming](/../../tree/oop/OOP.MD)
+
+---
+
+# JavaScript Algorithms :book: [^2]
 
 [^1]: [Course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+[^2]: [Book](https://www.newline.co/javascript-algorithms)
