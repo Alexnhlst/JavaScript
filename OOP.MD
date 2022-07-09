@@ -4,6 +4,7 @@
 
 1. [Objects](#objects)
 2. [prototype](#prototype)
+3. [Inheritance](#inheritance)
 
 ---
 
@@ -33,3 +34,40 @@ blueBird instanceof Bird //true
 ---
 
 ## prototype
+
+Since `numLegs` will probably have the same value for all instances of `Bird`, you essentially have a duplicated variable `numLegs` inside each `Bird` instance. A better way is to use the `prototype` of `Bird`. Properties in the `prototype` are shared among all instances of `Bird`.
+
+```JavaScript
+Bird.prototype.numLegs = 2;
+```
+
+>Now all instances of `Bird` have the `numLegs` property
+
+Own properties are defined directly on the object instance itself. And prototype properties are defined on the `prototype`.w
+A more efficient way is to set the `prototype` to a new object that already contains the properties.
+Setting the prototype to a new object erases the `constructor` property. This property can be used to check whick constructor function created the instance. Whenever a prototype is manually set to a new object, remember to define the `constructor` property.
+
+```JavaScript
+Bird.prototype = {
+    constructor: Bird,
+    numLegs: 2,
+    eat: function() {
+        console.log("nom nom nom");
+    },
+    describe: function() {
+        console.log("My name is " + this.name)
+    }
+}
+```
+
+> the `isPrototypeOf` method can be used to check if a property is a prototype property
+
+A `prototype` is an object, so it can have its own `prototype`.
+
+```JavaScript
+Object.prototype.isPrototypeOf(Bird.prototype)
+```
+
+---
+
+## Inheritance
