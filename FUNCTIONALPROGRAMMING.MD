@@ -6,6 +6,13 @@
 2. [.map()](#map)
 3. [.filter()](#filter)
 4. [.slice()](#slice)
+5. [.concat()](#concat)
+6. [.reduce()](#reduce)
+7. [.sort()](#sort)
+8. [.split()](#split)
+9. [.join()](#join)
+10. [.every()](#every)
+11. [.some()](#some)
 
 ---
 
@@ -61,3 +68,103 @@ const usersUnder30 = users.filter(user => user.age < 30); // [ { name: 'Amy', ag
 ---
 
 ## .slice()
+
+The `slice()` method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the lice, the second is the index for where to end the slice (and it's not-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array.
+
+```javascript
+const arr = ["Cat", "Dog", "Tiger", "Zebra"];
+const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
+```
+
+---
+
+## .concat()
+
+Concatenation means to join items end to end. JavaScript offers the `concat` method for both strings and arrays that work in the same way. It returns a new array and does not mutate either of the original arrays.
+
+```javascript
+[1, 2, 3].concat([4, 5, 6]);
+```
+
+---
+
+## .reduce()
+
+`Array.prototype.reduce()` is the most general of all array operations in JavaScript. It allows for more general forms of array processing. The `reduce` method iterates over each item in an array and returns a single value. This is achieved via a callback function that is called on each iteration. The callback accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which `reduce` is called. In addition to the callback function, `reduce` has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
+
+```javascript
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0); // 64
+```
+
+---
+
+## .sort()
+
+The `sort` method sorts the elements of an array according to the callback function.
+JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items.
+
+```javascript
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? 1 : -1;
+  });
+}
+
+reverseAlpha(['l', 'h', 'z', 'b', 's']); // ['z', 's', 'l', 'h', 'b']
+```
+
+---
+
+## .split()
+
+The `split` method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression.
+
+```javascript
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/); // ["How", "are", "you", "today"]
+```
+
+---
+
+## .join()
+
+The `join` method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.
+
+```javascript
+const arr = ["Hello", "World"];
+const str = arr.join(" "); // Hello World
+```
+
+---
+
+## .every()
+
+The `every` method works with arrays to check if every element passes a particular test. It returns a boolean value
+
+```javascript
+const numbers = [1, 5, 8, 0, 10, 11];
+
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+}); // false
+```
+
+---
+
+## .some()
+
+The `some` method works with arrays to check if any element passes a particular test. It returns a boolean value
+
+```javascript
+const numbers = [10, 50, 8, 220, 110, 11];
+
+numbers.some(function(currentValue) {
+  return currentValue < 10;
+}); // true
+```
