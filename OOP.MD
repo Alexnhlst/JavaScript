@@ -5,6 +5,7 @@
 1. [Objects](#objects)
 2. [prototype](#prototype)
 3. [Inheritance](#inheritance)
+4. [IIFE](#iife)
 
 ---
 
@@ -71,3 +72,90 @@ Object.prototype.isPrototypeOf(Bird.prototype)
 ---
 
 ## Inheritance
+
+There's a principle in programming called *Don't Repeat Yourself (DRY)* The reason repeated code is a problem is because any change requires fixing code in multiple places. If a method, or property, exists in two similar classes, the code can be edited to follow the DRY principle by creating a `supertype` (or parent)
+
+```JavaScript
+function Animal() { };
+
+Animal.prototype = {
+    constructor: Animal,
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+}
+
+let animal = Object.create(Animal.prototype);
+Bird.prototype = Object.create(Animal.prototype);
+```
+
+>`Object.create(obj) creates a new object, and sets `obj` as the new object's `prototype` 
+
+A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+
+```JavaScript
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+```
+
+It's possible to override an inherited method. It's done by adding a method to `ChildObject.prototype`
+
+```JavaScript
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+function Bird() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+```
+
+For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
+
+```JavaScript
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+```
+
+---
+
+## IIFE
+
+A common pattern in JavaScript is to execute a function as soon as it is declared
+
+```JavaScript
+(function () {
+    console.log("Chirp, chirp!")
+})();
+```
+
+The two parentheses at the end of the function expression cause it to be immediately executed or invoked. This patter is knows as an *immediately invoked function expression* or *IIFE* 
