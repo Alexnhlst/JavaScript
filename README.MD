@@ -6,8 +6,9 @@
 2. [ES6](/../../tree/es6/ES6.MD)
 3. [Regular Expressions](/../../tree/regex/REGEX.MD)
 4. [Debugging](/../../tree/debugging/DEBUGGING.MD)
-5. [Basic Data Structure](/../../tree/basic-data-structure/DATASTRUCTURE.MD)
+5. [Basic Data Structure](/../../tree/basic-data-structu/re/DATASTRUCTURE.MD)
 6. [Object Oriented Programming](/../../tree/oop/OOP.MD)
+7. [Functional Programming](/../../tree/functional-programming/FUNCTIONALPROGRAMMING.MD)
 
 ---
 
